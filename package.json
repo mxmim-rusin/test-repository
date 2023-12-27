@@ -1,24 +1,27 @@
 {
   "name": "test-app",
-  "version": "0.1.0",
   "homepage": "https://mxmim-rusin.github.io/test-repository/",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "gh-pages": "^6.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "deploy":"gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint": "eslint src/**.js"
+    "lint": "eslint src/**.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "url": "https://github.com/mxmim-rusin/test-repository"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +45,11 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.50.0"
+    "@semantic-release/commit-analyzer": "^11.1.0",
+    "@semantic-release/github": "^9.2.3",
+    "@semantic-release/release-notes-generator": "^12.1.0",
+    "eslint": "^8.50.0",
+    "gh-pages": "^6.1.0",
+    "semantic-release": "^22.0.8"
   }
 }
